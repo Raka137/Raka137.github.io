@@ -1,10 +1,11 @@
 // Ganti nama cache ini setiap kali Anda mengubah file yang di-cache
-const CACHE_NAME = 'my-pwa-cache-v3'; 
+const CACHE_NAME = 'my-pwa-cache-v4'; 
 
 const urlsToCache = [
     '/', // Ini adalah alias untuk index.html
     'index.html',
     'manifest.json'
+     'icon-192.png'
 ];
 
 // Event: Install
