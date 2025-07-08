@@ -1,52 +1,35 @@
-// Nama cache yang unik untuk memastikan pembaruan
-const CACHE_NAME = 'pwa-tugas-cache-v6';
-
-// Daftar lengkap file yang akan di-cache
+// Nama cache
+const CACHE_NAME = 'my-pwa-cache-v1';
+// Daftar file yang akan di-cache (aset inti aplikasi)
 const urlsToCache = [
-  '/',
-  'index.html',
-  'manifest.json',
-  'icon.png'
+    '/',
+    '/index.html'
 ];
 
-// Event install: Buka cache dan tambahkan semua file di atas
-self.addEventListener('install', (event) => {
-  event.waitUntil(
-    caches.open(CACHE_NAME)
-      .then((cache) => {
-        console.log('Opened cache');
-        return cache.addAll(urlsToCache);
-      })
-  );
+// Event 'install': Saat Service Worker pertama kali diinstall
+self.addEventListener('install', event => {
+    // Menunggu sampai proses caching selesai
+    event.waitUntil(
+        caches.open(CACHE_NAME)
+            .then(cache => {
+                console.log('Cache dibuka');
+                return cache.addAll(urlsToCache);
+            })
+    );
 });
 
-// Event activate: Hapus cache lama yang tidak digunakan lagi
-self.addEventListener('activate', (event) => {
-  event.waitUntil(
-    caches.keys().then((cacheNames) => {
-      return Promise.all(
-        cacheNames.map((cacheName) => {
-          if (cacheName !== CACHE_NAME) {
-            console.log('Clearing old cache:', cacheName);
-            return caches.delete(cacheName);
-          }
-        })
-      );
-    })
-  );
-});
-
-// Event fetch: Ambil dari cache jika ada, jika tidak ambil dari network
-self.addEventListener('fetch', (event) => {
-  event.respondWith(
-    caches.match(event.request)
-      .then((response) => {
-        // Jika ada di cache, kembalikan dari cache
-        if (response) {
-          return response;
-        }
-        // Jika tidak ada, ambil dari network
-        return fetch(event.request);
-      })
-  );
+// Event 'fetch': Saat aplikasi meminta resource (file, gambar, data)
+self.addEventListener('fetch', event => {
+    event.respondWith(
+        // Cek apakah request ada di dalam cache
+        caches.match(event.request)
+            .then(response => {
+                // Jika ada di cache, kembalikan dari cache
+                if (response) {
+                    return response;
+                }
+                // Jika tidak ada, fetch dari network
+                return fetch(event.request);
+            })
+    );
 });
