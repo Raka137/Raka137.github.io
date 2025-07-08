@@ -1,5 +1,5 @@
 // Nama cache
-const CACHE_NAME = 'my-pwa-cache-v1';
+const CACHE_NAME = 'my-pwa-cache-v8';
 // Daftar file yang akan di-cache (aset inti aplikasi)
 const urlsToCache = [
     '/',
