@@ -1,11 +1,11 @@
 {
-    "name": "PWA Sederhana - Tugas",
+    "name": "PWA Sederhana - Tugas Raka",
     "short_name": "TugasPWA",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#FFFFFF",
-    "theme_color": "#FFFFFF",
-    "description": "Aplikasi PWA sederhana untuk tugas kuliah.",
+    "theme_color": "#3367D6",
+    "description": "Aplikasi PWA sederhana untuk tugas.",
     "icons": [
         {
             "src": "https://cdn.glitch.com/b5f42631-7463-4886-9125-42b7a99f1885%2Ficon-192x192.png?v=1592243763953",
