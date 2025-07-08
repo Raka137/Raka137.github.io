@@ -1,14 +1,14 @@
 {
-    "name": "PWA Sederhana - Tugas Raka",
-    "short_name": "TugasPWA",
+    "name": "PWA Sederhana oleh <Nama Anda>",
+    "short_name": "PWA Simple",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#FFFFFF",
-    "theme_color": "#3367D6",
+    "theme_color": "#FFFFFF",
     "description": "Aplikasi PWA sederhana untuk tugas.",
     "icons": [
         {
-            "src": "icon.png",
+            "src": "images/logo192.png",
             "sizes": "192x192",
             "type": "image/png"
         }
