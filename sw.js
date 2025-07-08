@@ -1,12 +1,12 @@
 // Nama cache yang unik untuk memastikan pembaruan
-const CACHE_NAME = 'pwa-tugas-cache-v5';
+const CACHE_NAME = 'pwa-tugas-cache-v6';
 
 // Daftar lengkap file yang akan di-cache
 const urlsToCache = [
   '/',
   'index.html',
   'manifest.json',
-  'icon-192.png'
+  'icon.png'
 ];
 
 // Event install: Buka cache dan tambahkan semua file di atas
