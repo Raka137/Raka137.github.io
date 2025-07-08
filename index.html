@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tugas PWA</title>
+    <title>Tugas PWA Raka</title>
     <!-- Link ke Manifest -->
     <link rel="manifest" href="manifest.json">
-    <!-- Meta untuk tema warna di browser mobile -->
-    <meta name="theme-color" content="#FFFFFF"/>
+    <!-- Tema warna untuk browser mobile -->
+    <meta name="theme-color" content="#3367D6"/>
 </head>
 <body>
     <h1>Halo, Dunia! Ini PWA Sederhanannya.</h1>
@@ -18,10 +18,8 @@
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', function() {
                 navigator.serviceWorker.register('sw.js').then(function(registration) {
-                    // Registrasi berhasil
                     console.log('ServiceWorker registration successful with scope: ', registration.scope);
                 }, function(err) {
-                    // Registrasi gagal
                     console.log('ServiceWorker registration failed: ', err);
                 });
             });
