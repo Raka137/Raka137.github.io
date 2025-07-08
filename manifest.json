@@ -8,13 +8,8 @@
     "description": "Aplikasi PWA sederhana untuk tugas.",
     "icons": [
         {
-            "src": "https://web.dev/images/pwa-icons/icon-192x192.png",
+            "src": "icon-192.png",
             "sizes": "192x192",
-            "type": "image/png"
-        },
-        {
-            "src": "https://web.dev/images/pwa-icons/icon-512x512.png",
-            "sizes": "512x512",
             "type": "image/png"
         }
     ]
