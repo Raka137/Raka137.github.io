@@ -3,26 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tugas PWA Raka</title>
-    <!-- Link ke Manifest -->
+    <title>PWA Sederhana</title>
+    
+    <!-- Link ke Manifest File -->
     <link rel="manifest" href="manifest.json">
-    <!-- Tema warna untuk browser mobile -->
-    <meta name="theme-color" content="#3367D6"/>
+    
+    <style>
+        body { font-family: system-ui, sans-serif; text-align: center; padding: 2rem; }
+    </style>
 </head>
 <body>
-    <h1>Halo, Dunia! Ini PWA Sederhanannya.</h1>
-    <p>Halaman ini bisa diakses secara offline setelah di-cache oleh Service Worker.</p>
+    <h1>Selamat Datang!</h1>
+    <p>Ini adalah PWA sederhana pertama saya.</p>
 
     <script>
-        // Script untuk mendaftarkan Service Worker
+        // Mendaftarkan Service Worker
         if ('serviceWorker' in navigator) {
-            window.addEventListener('load', function() {
-                navigator.serviceWorker.register('sw.js').then(function(registration) {
-                    console.log('ServiceWorker registration successful with scope: ', registration.scope);
-                }, function(err) {
-                    console.log('ServiceWorker registration failed: ', err);
-                });
-            });
+            navigator.serviceWorker.register('/sw.js')
+                .then((reg) => console.log('Service worker terdaftar', reg))
+                .catch((err) => console.log('Service worker tidak terdaftar', err));
         }
     </script>
 </body>
