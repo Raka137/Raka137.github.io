@@ -1,5 +1,5 @@
 // Ganti nama cache ini setiap kali Anda mengubah file yang di-cache
-const CACHE_NAME = 'my-pwa-cache-v2'; 
+const CACHE_NAME = 'my-pwa-cache-v3'; 
 
 const urlsToCache = [
     '/', // Ini adalah alias untuk index.html
